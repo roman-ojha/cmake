@@ -1,0 +1,25 @@
+-> previously with cmake we use to make a makefile
+-> where we will write a command that will help to build and created the executable program
+-> so here we write to program to do ever task
+-> and run 'make' command to build the executable:
+*) for windows
+    -> But by default there will not exist 'make' command
+    -> so for that you have to install 'mingw-get'
+    -> https://sourceforge.net/projects/mingw/files/Installer/mingw-get/
+*) CMake
+    -> CMake create build system files
+    -> CMake also do the same thing inside the back
+    -> it create a command based on we write in cmake
+    -> CMake relay on a top level file called 'CMakeLists.txt'
+    -> CMake can do ever thing for you to manager you project
+    -> we have to provide the build path to build the executable
+        cmake [options] <path-to-source>
+        cmake [options] <path-to-existing-build>
+        cmake [options] -S <path-to-source> -B <path-to-build>
+    -> standard way to store build files inside the ./build folder in project directory
+    -> for now we will run:
+        => cmake -S . -B build
+            -> (-S: source on current directory)
+            -> (-B: build on build folder)
+
+    -> But now we will write a program in 'CMakeLists.txt' file
