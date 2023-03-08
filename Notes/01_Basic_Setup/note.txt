@@ -6,6 +6,14 @@
     -> But by default there will not exist 'make' command
     -> so for that you have to install 'mingw-get'
     -> https://sourceforge.net/projects/mingw/files/Installer/mingw-get/
+    -> after installing 'mingw-get' we can get that in : C:\MinGW\bin\mingw-get.exe
+    -> we will use this to install our make program
+    -> first we will add: C:\MinGW\bin\ path to env variable
+    => Now we will install make program :
+        -> mingw-get install mingw32-make
+    => now we can use 'mingw32-make' command rather then 'make'
+    => if you want to use 'make' command rather then 'mingw32-make' then you just have to rename the 'mingw32-make.exe' file to 'make.exe' inside: C:\MinGW\bin 
+    => now we can use 'make' command to executable 'makefile'
 *) CMake
     -> CMake create build system files
     -> CMake also do the same thing inside the back
@@ -23,3 +31,24 @@
             -> (-B: build on build folder)
 
     -> But now we will write a program in 'CMakeLists.txt' file
+    *) In windows:
+        -> by default it will not build 'Makefile' inside the './build' folder
+        -> https://stackoverflow.com/questions/39643291/make-without-makefile-after-cmake
+        -> rather it will generate the solution '.sln' file by default which you can use to build the executable, or '.sln' is the visual studio generator
+        -> but if you want to create make then you have to add another command while building using cmake
+        -> cmake -S . -B build -G "Unix Makefiles"
+    
+    => now we can run 'Makefile' it will create inside the './build' folder using 'make' command
+
+    => NOTE: you can make different build directories according to you different build executable program
+
+    => now you can run some command on build directories:
+    *) Cmake configure to generate executable:
+        -> cmake-gui .
+            (. refer the current build directory)
+        -> can use to configure the 'configure' and 'generate' phase there
+        -> here we get all the cache variable which we can turn on and off
+
+    *) CMake build
+        -> or you can use 'cmake --build .' inside build directory to build the executable
+        -> if we use 'cmake --build .' then we don't have to use 'make' command
