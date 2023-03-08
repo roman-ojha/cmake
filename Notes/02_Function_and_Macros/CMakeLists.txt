@@ -1,13 +1,27 @@
-# first we will include the cmake version
-# try to use that version or less then the version that you currently have in you computer
 cmake_minimum_required(VERSION 3.26.0)
 
-# now we will add the project name
 project(TEST)
-# we can also provide the langauge that we use
-# project(TEST LANGUAGE CXX)
 
-# now we will provide the executable name that we want build
-# also have to provide the source file name
 add_executable(${PROJECT_NAME} main.cpp)
-# add_executable(<build_name> <source_name>)
+
+# message function to print console
+message("Hello world")
+# printing varialbe values
+message("${PROJECT_NAME}")
+
+# Now we will create our own 'print()'
+# creating own function
+# function(<name_of_function_that_we_want_to_callable_with> <arguments>)
+function(print var)
+    # var is the referencing varialbe
+    # in this example we get 'PROJECT_NAME'
+    # we can dreference the referencing varialbe to get the variable value like of 'PROJECT_NAME'
+    # ${${var}}
+    message("${var} = ${${var}}") # PROJECT_NAME = TEST
+endfunction()
+
+print(PROJECT_NAME)
+
+# now we can print any varialbes
+print(CMAKE_PROJECT_NAME)
+# Start from here: https://youtu.be/4BvyJGfFKNg?list=PL8i3OhJb4FNV10aIZ8oF0AA46HgA2ed8g&t=388

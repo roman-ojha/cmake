@@ -52,3 +52,11 @@
     *) CMake build
         -> or you can use 'cmake --build .' inside build directory to build the executable
         -> if we use 'cmake --build .' then we don't have to use 'make' command
+
+    *) NOTE:
+        *) what is 'make':
+            -> make is something that runs on terminal
+            -> it is not only relate to c++ & cmake
+            -> command: 'make help' to see all the command
+        *) What 'cmake' command does:
+            -> ti create the Makefile to create the executable
